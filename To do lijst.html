@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   <p> Title</p>
+   <p> <input type="text" name="titel" id="titel"></p>
+    Todo <br> <textarea name="todo" id="todo" cols="30" rows="10"></textarea> <br>
+    <p><button onclick="uitvoeren();" name="toevoegen" id="toevoegen">Toevoegen</button></p>
+    <ul id="productenlijst"></ul>
+
+    <script>
+        var titel=document.querySelector("#titel");
+        var todo=document.querySelector("#todo");
+        var productenlijst=document.querySelector("#productenlijst");
+
+        var object= {
+            title: titel.value,
+            beschrijving: todo.value,
+        }
+
+        var array=[];
+        array.push(object);
+
+        function uitvoeren(){
+            var html= "";
+            for( var i=0; i<array.length; i++){
+                html += "<li><b>"+ array[i].title + "</b>"+ array[i].beschrijving+ "</li>";
+            }
+            productenlijst.innerhtml= html;
+        }
+
+
+
+
+    </script>
+</body>
+</html>
