@@ -18,26 +18,22 @@
         var titel=document.querySelector("#titel");
         var todo=document.querySelector("#todo");
         var productenlijst=document.querySelector("#productenlijst");
-
-        var object= {
+        var array=[];
+       
+        function uitvoeren(){
+            var object= {
             title: titel.value,
             beschrijving: todo.value,
         }
-
-        var array=[];
-        array.push(object);
-
-        function uitvoeren(){
+        // console.log(object);
+            array.push(object);
+            
             var html= "";
-            for( var i=0; i<array.length; i++){
-                html += "<li><b>"+ array[i].title + "</b>"+ array[i].beschrijving+ "</li>";
+            for (var i=0; i<array.length; i++){
+                html += "<li> <b>"+ array[i].title + "</b>"+ array[i].beschrijving+ "</li>";
             }
-            productenlijst.innerhtml= html;
+            productenlijst.innerHTML= html;
         }
-
-
-
-
     </script>
 </body>
 </html>
